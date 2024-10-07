@@ -2,18 +2,14 @@
 // 1.1 Crea una función llamada `procesarPedido` que recibe un array `pedido`.
 // Debes sacar el primer elemento (nombre del cliente), añadir "bebida" al inicio del array y añadir el nombre del cliente al final.
 function procesarPedido(pedido) {
-
-    let cliente = pedido.shift();
-
-    pedido.unshift("bebida");
-
-    pedido.push(cliente);
-
-    return pedido;
+    const cliente = pedido[0]; 
+    return ["bebida", ...pedido.slice(1), cliente]; 
 }
-let pedido = ["Alan", "hamburguesa", "papas"];
+
+let pedido = ["Alan", "hamburguesa", "coca"];
 let resultado = procesarPedido(pedido);
-console.log(resultado); // ["bebida", "hamburguesa", "papas", "Alan"]
+console.log(resultado); // ["bebida", "hamburguesa", "coca", "Alan"]
+
 
 // 2. Iteración de Arrays en Javascript
 // 2.1 Crea una función llamada `sumarPares` que reciba un array de números.
