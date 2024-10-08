@@ -91,16 +91,16 @@ function findMinMaxPages(books) {
     const minPages = Math.min(...books); 
     const maxPages = Math.max(...books); 
     
-    const minIndex = books.indexOf(minPages); s
+    const minIndex = books.indexOf(minPages); 
     const maxIndex = books.indexOf(maxPages); 
   
     return [minIndex, maxIndex];
-  }
+}
   
-  const libros = [350, 120, 540, 275, 390, 130, 670];
-  const resultado = findMinMaxPages(libros);
-  console.log(resultado); 
-  
+const libros = [350, 120, 540, 275, 390, 130, 670];
+const resultado = findMinMaxPages(libros);
+console.log(resultado); // resultado : [1, 6]
+
 
 // Exportar las funciones para que puedan ser completadas y probadas
 module.exports = {
