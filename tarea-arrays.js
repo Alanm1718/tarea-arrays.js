@@ -88,18 +88,24 @@ function findJavaScript(matrix) {
 // 6.1 Crea una función llamada `findMinMaxPages` que reciba un array de números (representando el número de páginas de libros).
 // La función debe devolver un array con dos posiciones: el índice del libro con menos páginas y el índice del libro con más páginas.
 function findMinMaxPages(books) {
-    const minPages = Math.min(...books); 
-    const maxPages = Math.max(...books); 
-    
-    const minIndex = books.indexOf(minPages); 
-    const maxIndex = books.indexOf(maxPages); 
-  
-    return [minIndex, maxIndex];
+    return books.reduce(
+        (acc, pages, index) => {
+            if (pages < books[acc[0]]) {
+                acc[0] = index; 
+            }
+            if (pages > books[acc[1]]) {
+                acc[1] = index;
+            }
+            return acc;
+        },
+        [0, 0] 
+    );
 }
-  
+
 const libros = [350, 120, 540, 275, 390, 130, 670];
 const resultado = findMinMaxPages(libros);
-console.log(resultado); // resultado : [1, 6]
+console.log(resultado); // Salida: [1, 6]
+
 
 
 // Exportar las funciones para que puedan ser completadas y probadas
