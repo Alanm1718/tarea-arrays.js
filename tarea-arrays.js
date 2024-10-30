@@ -94,8 +94,8 @@ function findMinMaxPages(books) {
 }
 
 let books = [350, 120, 540, 275, 390, 130, 670];  
-let resultado = findMinMaxPages(books);  // Se usa 'books' como argumento
-console.log(resultado); // -> [1, 6]
+let resultado2 = findMinMaxPages(books);  // Se usa 'books' como argumento
+console.log(resultado2); // -> [1, 6]
 
 // Exportar las funciones para que puedan ser completadas y probadas
 module.exports = {
